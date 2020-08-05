@@ -14,7 +14,7 @@ public class LoginAttemptsComponentImpl implements LoginAttemptsComponent {
 
     public static final Long DROP_ATTEMPTS_DURATION_MS = 5 * 60 * 1000L;
 
-    public static final Integer MAX_ATTEMPTS_COUNT = 1000;
+    public static final Integer MAX_ATTEMPTS_COUNT = 5;
 
     public static final Long BAN_TIME_MS = 30 * 60 * 1000L;
 
