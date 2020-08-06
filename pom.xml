@@ -86,7 +86,6 @@
 			<artifactId>maven-compiler-plugin</artifactId>
 			<version>3.8.1</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -94,6 +93,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupid>com.heroku.sdk</groupid>
+				<artifactid>heroku-maven-plugin</artifactid>
+				<version>4.0.0</version>
+				<configuration>
+					<appname>heroku-demo-stackabuse</appname>
+					<includetarget>false</includetarget>
+					<includes>
+						<include>${project.build.directory}/${project.build.finalName}.jar</include>
+					</includes>
+					<jdkversion>1.8</jdkversion>
+					<processtypes>
+						<web>java $JAVA_OPTS -jar
+							${project.build.directory}/${project.build.finalName}.jar</web>
+					</processtypes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
